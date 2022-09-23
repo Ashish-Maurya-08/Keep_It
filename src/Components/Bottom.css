@@ -1,0 +1,161 @@
+:root {
+    --background-bottom: aliceblue;
+    --light-text: gray;
+}
+
+.bottombar {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    z-index: 5;
+    border-top: var(--border) 1px solid;
+    background-color: var(--background-bottom);
+    box-shadow: 0px -3px 17px -10px rgba(0, 0, 0, 0.5);
+}
+
+#round {
+    background-color: var(--background);
+    position: relative;
+    bottom: 2.5rem;
+    height: 5rem;
+    min-width: 5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--border) 1px solid;
+    box-shadow: inset 0px -5px 13px -10px rgba(0, 0, 0, 0.5);
+}
+
+.addbutton {
+    display: flex;
+    justify-content: center;
+    transform: rotate(180deg);
+    transition: 1s;
+}
+
+.rotateadd {
+    transform: rotate(-315deg);
+    transition: 1s;
+}
+
+.addnote {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms;
+    z-index: 3;
+    backdrop-filter: blur(8px);
+}
+
+.darken {
+    background-color: rgb(32, 33, 36, 0.5);
+    transition: 400ms;
+}
+
+.lighten {
+    background-color: rgb(255, 255, 255);
+    transition: 400ms;
+}
+
+.notecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-bottom);
+    border-radius: 8px;
+    max-height: 30rem;
+    width: 30rem;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+
+.title {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin: 0.7rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: var(--icon);
+    font-family: Poppins;
+    font-size: 1.2rem;
+    background-color: var(--background-bottom);
+}
+
+.note {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#notes[contenteditable]:empty::before {
+    content: "Take a Note...";
+    color: gray;
+}
+
+#notes {
+    -webkit-appearance: textarea;
+    min-height: 4rem;
+    max-height: 22rem;
+    margin: 0.7rem;
+    width: 100%;
+    outline: none;
+    color: var(--icon);
+    font-family: Poppins;
+    font-size: 1rem;
+    overflow: scroll;
+    transition: 1s;
+}
+
+#notes::-webkit-scrollbar {
+    display: none;
+}
+
+#settext {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#settext button {
+    font-family: Poppins;
+    color: gray;
+    margin: 1rem;
+    padding: 0.3rem 1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+#settext button:hover {
+    background-color: var(--hover);
+    border-radius: 5px;
+}
+
+@media screen and (max-width:500px) {
+    .notecontainer {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .notecontainer {
+        width: 15rem;
+    }
+}

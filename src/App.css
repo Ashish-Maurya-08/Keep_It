@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.maindiv {
+    display: flex;
+    overflow: scroll;
+    flex-grow: 1;
+}
+
+.maindiv::-webkit-scrollbar {
+    display: none;
+}
+
+.fullscreen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@media screen and (max-width:450px) {
+    .maindiv {
+        flex-direction: column;
+    }
+}

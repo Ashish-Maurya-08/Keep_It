@@ -7,7 +7,7 @@ import $ from "jquery";
 function Login(props) {
   const [live, setlive] = useState("Guest");
 
-  var regx = /^[\w\.\- _]{2,25}$/g;
+  var regx = /^[\w.\- _]{2,25}$/g;
 
   const submit = (user) => {
     props.set(user);
@@ -17,7 +17,7 @@ function Login(props) {
   const submituser = (e) => {
     e.preventDefault();
     var user = $("#username").val();
-    if (user==' '*user.length){
+    if (user===' '*user.length){
       alert('Only Spaces are not Allowed!!\n\nTry Again :)')
     }
     else if (!regx.test(user)) {

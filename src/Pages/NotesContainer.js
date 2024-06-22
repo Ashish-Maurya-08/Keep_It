@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React from "react";
 import "./NoteContainer.css";
 import $ from "jquery";
 import { RiDeleteBin4Line, RiInboxArchiveLine,RiInboxUnarchiveLine } from "react-icons/ri";
@@ -39,7 +39,7 @@ function NotesContainer(props) {
       }
     }
 
-    if (props.active=='bin'){
+    if (props.active==='bin'){
       optclass='optbin'
     }
     else if (props.active==='notes'){
@@ -60,7 +60,7 @@ function NotesContainer(props) {
   if (props.title === "") {
     hidetitle = true;
   }
-  if (props.desc === "" || (props.desc).length==0 || props.desc=='\n'){
+  if (props.desc === "" || (props.desc).length===0 || props.desc==='\n'){
     hidedesc = true;
   }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Bottom.css";
 import $ from "jquery";
 import add from "./../png/plus.png"; 
@@ -21,7 +21,7 @@ function Bottom(props) {
 
   function checkenter(e){
     let len=($('#notes').text()).length;
-    if (e.key=='Enter'){
+    if (e.key==='Enter'){
       console.log('Enter Pressed!')
       nextlineindex.push(len)
     }
@@ -46,13 +46,13 @@ function Bottom(props) {
     note=note+tempnote.slice(nextlineindex[nextlineindex.length-1],tempnote.length)
   }
   else{
-    var note=tempnote;
+    note=tempnote;
   }
     console.log(note);
     console.log(note.length);
-    console.log(note==" "*note.length);
+    console.log(note===" "*note.length);
 
-    if ((title == "" && note == "") || (title=='' && note==(" "*note.length)) ||(title=='' && note==("\n"*note.length)) ||(title==(" "*title.length) && note=='')){
+    if ((title === "" && note === "") || (title==='' && note===(" "*note.length)) ||(title==='' && note===("\n"*note.length)) ||(title===(" "*title.length) && note==='')){
       alert("Both can't be Empty!!!");
     } else {
       props.setNotes((previous) => [...previous, { Title: title, Note: note }]);

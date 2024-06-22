@@ -54,11 +54,11 @@ function Bin(props) {
 
   return (
     <div className={props.show ? "side open" : "side close"}>
-      <div className={props.Bin.length == 0 ? "nothing" : "hide"}>
+      <div className={props.Bin.length === 0 ? "nothing" : "hide"}>
         <RiDeleteBin5Line size="130" opacity={props.dark?"1":'0.2'} />
         <div style={{ opacity: "0.6",margin:'1rem' }}>Empty Bin</div>
       </div>
-      <div className={props.Bin.length != 0 ? "contain" : "hide"}>
+      <div className={props.Bin.length !== 0 ? "contain" : "hide"}>
         <Masonry
           breakpointCols={breakpoints}
           className="my-masonry-grid"

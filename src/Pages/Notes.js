@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import $ from "jquery";
 import NotesContainer from "./NotesContainer";
 import { GoNote } from "react-icons/go";
 import Masonry from "react-masonry-css";
@@ -59,11 +58,11 @@ function Notes(props) {
 
   return (
     <div className="side">
-      <div className={props.Notes.length == 0 ? "nothing" : "hide"}>
+      <div className={props.Notes.length === 0 ? "nothing" : "hide"}>
         <GoNote size="130" opacity={props.dark?"1":'0.2'} />
         <div style={{ opacity: "0.6",margin:'1rem' }}>Nothing Here! Add Notes </div>
       </div>
-      <div className={props.Notes.length != 0 ? "contain" : "hide"}>
+      <div className={props.Notes.length !== 0 ? "contain" : "hide"}>
         <Masonry
           breakpointCols={breakpoints}
           className="my-masonry-grid"

@@ -17,13 +17,12 @@ import Notes from "./Pages/Notes";
 import {Datacontext} from './Datacontext';
 
 function App() {
-
+  var Dark = false;
   var tempdark=localStorage.getItem("Dark");
-  if (tempdark==null || tempdark=='false'){
-    var Dark=false;
+  if (tempdark==null || tempdark==='false'){
   }
   else {
-    var Dark=true;
+    Dark=true;
   }
 
   const [dark,setdark]=useState(Dark);
